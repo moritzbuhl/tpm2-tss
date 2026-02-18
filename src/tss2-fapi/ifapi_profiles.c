@@ -247,7 +247,7 @@ ifapi_profiles_get(
     check_not_null(profiles);
     check_not_null(name);
     check_not_null(profile);
-    char *split;
+    const char *split;
     size_t len;
 
     /* if no name or nor profile prefix is given, use the default profile */

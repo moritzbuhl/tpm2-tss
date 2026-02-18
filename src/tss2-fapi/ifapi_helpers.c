@@ -241,7 +241,7 @@ bool
 ifapi_path_type_p(const char *path, const char *type)
 {
     size_t pos = 0;
-    char *end;
+    const char *end;
     int end_pos;
 
     if (strncmp("/", path, 1) == 0)
@@ -304,7 +304,7 @@ ifapi_null_primary_p(const char *path)
 {
     size_t pos1 = 0;
     size_t pos2 = 0;
-    char *start;
+    const char *start;
 
     if (strncmp("/", path, 1) == 0)
         pos1 = 1;
@@ -343,7 +343,7 @@ ifapi_hierarchy_path_p(const char *path)
 {
     size_t pos1 = 0;
     size_t pos2 = 0;
-    char *start;
+    const char *start;
 
     if (strncmp("/", path, 1) == 0)
         pos1 = 1;
@@ -1005,7 +1005,7 @@ ifapi_set_name_hierarchy_object(IFAPI_OBJECT *object)
             pos += 1;
         /* Skip profile if it does exist in path */
         if (strncmp("P_", &path[pos], 2) == 0) {
-            char *  start = strchr(&path[pos], IFAPI_FILE_DELIM_CHAR);
+            const char *start = strchr(&path[pos], IFAPI_FILE_DELIM_CHAR);
             if (start) {
                 pos2 = (int)(start - &path[pos]);
                 pos = pos2 + 2;

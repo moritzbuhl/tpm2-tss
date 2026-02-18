@@ -148,7 +148,7 @@ tctildr_conf_parse (const char *name_conf,
                     char *name,
                     char *conf)
 {
-    char *split;
+    const char *split;
     size_t combined_length;
 
     if (name_conf == NULL) {
